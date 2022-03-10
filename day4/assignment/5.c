@@ -9,7 +9,7 @@ write a program parent process wait untill, while child process open a file and 
 #include<unistd.h>
 #include<stdlib.h>
 // #include<String>
-
+2
 int main(){
     int pid,fd;
     int i;
