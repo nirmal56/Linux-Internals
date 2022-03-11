@@ -9,7 +9,7 @@ write a program parent process wait untill, while child process open a file and 
 #include<unistd.h>
 #include<stdlib.h>
 // #include<String>
-2
+
 int main(){
     int pid,fd;
     int i;
@@ -21,8 +21,10 @@ int main(){
         if((i=write(fd,wbuf,30))<0){
                 printf("file wruttn.\n");
         }
-    read(fd,rbuf,30);
-    printf("read data is:%s\n",rbuf);
+   
+        printf("read data is:%s\n",rbuf);
+        write(1,buf,n);
+
     }
 
     else{
