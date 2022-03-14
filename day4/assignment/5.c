@@ -15,15 +15,14 @@ int main(){
     int i;
     pid = fork();
     char wbuf[30]="a file that will be written.";
-    char rbuf[30];
     if (pid == 0){
         fd=open("file3.txt", O_CREAT | O_RDWR, 0777);
         if((i=write(fd,wbuf,30))<0){
                 printf("file wruttn.\n");
         }
    
-        printf("read data is:%s\n",rbuf);
-        write(1,buf,n);
+        write(1,wbuf,30);
+        printf("read data is:%s\n",wbuf);
 
     }
 
