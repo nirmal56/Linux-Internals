@@ -1,3 +1,7 @@
+/*
+6.write a program that used to check for the existance of the file and 
+also check whether we can open file for read,write,execute or not.
+*/
 #include<stdio.h>
 #include<fcntl.h>
 #include<unistd.h>
@@ -18,10 +22,15 @@ int main(){
         if(write(fd4, to_write, leng)<0){ // writing permision in file
             printf("failed to write\n");
             
-        } else if(read(fd4, to_read, leng)<0){ //reading permision in file
+        } 
+        else if(read(fd4, to_read, leng)<0){ //reading permision in file
             printf("unable to read the file\n");
         }
-    } else{
+        else{
+            printf("read write successfull\n");
+        }
+    } 
+    else{
         printf("not exists\n");
     }
     

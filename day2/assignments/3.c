@@ -15,7 +15,6 @@ int main(){
 	
 	printf("size disc of blocks =%lu \n",st.st_blksize);
 	
-	
 	printf("\n\n");
 	close(fd);
 	return 0;
