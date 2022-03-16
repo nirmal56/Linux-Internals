@@ -14,13 +14,26 @@ int main(){
     pid1=fork();
     if(pid1==0){
         printf("\n1st child is:%d\n",getpid());
-        execl("/usr/bin/vim","vim","txt1.txt",NULL);
     }
     else{
         printf("\n2nd child is:%d\n",getpid());
-        execl("/usr/bin/vim","vim","txt2.txt",NULL);
         pid2=fork();
+        if(pid2==0){
+            // execl("/usr/bin/pstree","pstree",NULL);
+            printf("successfully run execl() for child process 1\n");
+        } else{
+            // wait(0);
+            printf("failed to run execl() for child process 1\n");
+        }
+        wait(0);
         pid3=fork();
+        if(pid3==0){
+            // execl("/usr/bin/vim","vim","txt3.txt",NULL);
+            printf("successfully run execl() for child process 2\n");
+        } else{
+            // wait(0);
+            printf("failed to run execl() for child process 2\n");
+        }
     }
     exit(0);
     return 0;
