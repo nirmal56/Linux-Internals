@@ -11,5 +11,9 @@
 
 int main(int argc, char *argv[]){
     //execeutable file named 2 is needed to run this program
-     execl("/home/nirmal/user/Linux-Internals/day4/assignment/2","",0);//dont forget to typr file name inpaths
+    int fd;
+    fd = execl("/home/nirmal/user/Linux-Internals/day4/assignment/2","",0);//dont forget to typr file name inpaths
+    wait(0);
+    printf("this is fd:%d",fd);
+    printf("------------------------------");
 }

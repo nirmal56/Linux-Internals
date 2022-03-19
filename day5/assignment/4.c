@@ -12,4 +12,4 @@
 int main(int argc, char *argv[]){
      execl(argv[1],0);//dont forget to typr file name inpaths
 }
-///a.out /home/nirmal/user/Linux-Internals/day4/assignment/3 
+///a.out /home/nirmal/user/Linux-Internals/day5/assignment/3 
