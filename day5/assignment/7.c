@@ -12,7 +12,7 @@ int main(){
     int pid;
     pid=fork();
     if(pid==0){
-        //executable file named 2 is needed to run this program
+        //executable file named 6 is needed to run this program
         int ret = execl("/home/nirmal/user/Linux-Internals/day5/assignment/6","./6",NULL);
     }
     else{
