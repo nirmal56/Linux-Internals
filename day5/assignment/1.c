@@ -9,10 +9,11 @@
 #include<unistd.h>
 #include<stdlib.h>
 
-int main(int argc, char *argv[]){
+int main(){
     //execeutable file named 2 is needed to run this program
     int fd;
-    fd = execl("/home/nirmal/user/Linux-Internals/day4/assignment/6",O_RDONLY,0);//dont forget to typr file name inpaths
-    printf("this is fd:%d",fd);
-    printf("------------------------------");
+    fd = execl("/home/nirmal/user/Linux-Internals/day5/assignment/3","" ,0);//dont forget to typr file name inpaths
+    if(fd == -1)
+        printf("error opening file");
+    return 0;
 }
