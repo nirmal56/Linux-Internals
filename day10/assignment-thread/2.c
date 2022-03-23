@@ -8,7 +8,7 @@ pthread_t tid;
 
 void *thr1(void *arg){
     printf("in the thread\n");
-    printf("thread with id:%ld cancelled\n",pthread_self());
+    printf("thread with id: %ld cancelled\n",pthread_self());
     pthread_cancel(tid);
 }
 
@@ -18,7 +18,7 @@ int main(){
 
     pthread_join(tid,NULL);
 
-    printf("now id:%ld \n",pthread_self());
+    printf("now id is:%ld \n",pthread_self());
     printf("main ended\n");
     return 0;
 }
