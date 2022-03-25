@@ -35,7 +35,6 @@ void *foo(void *arg){
 int main(){
     pthread_t tid1,tid2,tid3;
     pthread_create(&tid1,NULL,foo,"thdone");
-
     sleep(1);
     done=2;
     pthread_create(&tid2,NULL,foo,"thdtwo");
