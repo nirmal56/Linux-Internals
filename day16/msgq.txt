@@ -1,0 +1,12 @@
+nirmal@nirmal-VirtualBox:~$ cd /
+nirmal@nirmal-VirtualBox:/$ cd proc/sys/fs
+nirmal@nirmal-VirtualBox:/proc/sys/fs$ cd mqueue
+nirmal@nirmal-VirtualBox:/proc/sys/fs/mqueue$ 
+nirmal@nirmal-VirtualBox:/proc/sys/fs/mqueue$ cat msg_max
+10
+nirmal@nirmal-VirtualBox:/proc/sys/fs/mqueue$ cat msgsize__max
+cat: msgsize__max: No such file or directory
+nirmal@nirmal-VirtualBox:/proc/sys/fs/mqueue$ cat msgsize_max
+8192
+nirmal@nirmal-VirtualBox:/proc/sys/fs/mqueue$ 
+
