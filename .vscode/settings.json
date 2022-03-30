@@ -5,6 +5,8 @@
         "wait.h": "c",
         "stdlib.h": "c",
         "unistd.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "ipc.h": "c",
+        "bitypes.h": "c"
     }
 }
