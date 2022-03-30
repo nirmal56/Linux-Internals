@@ -20,10 +20,10 @@ int main(){
         perror("init");
     
     printf("main get spin lock\n");
-    rc=pthread_spin_lock(&slock);
+    pthread_spin_lock(&slock);
 
-    printf("lock in spinlock mainnbody\n");
-    rc=pthread_create(&tid1,NULL,spilock,(int*)1);
+    printf("lock in spinlock mainbody\n");
+    pthread_create(&tid1,NULL,spilock,(int*)1);
 
     printf("in waiting state\n");
     pthread_join(tid1,NULL);

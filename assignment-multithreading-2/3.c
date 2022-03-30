@@ -20,6 +20,7 @@ int main(){
     pthread_create(&tid,NULL,threadfun,(void*)1);
     pthread_create(&tid,NULL,threadfun,(void*)2);
     pthread_create(&tid,NULL,threadfun,(void*)3);
+    pthread_create(&tid,NULL,threadfun,(void*)4);
     printf("exiting main\n");
     pthread_exit(0);
 
