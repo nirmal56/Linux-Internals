@@ -8,7 +8,7 @@
 pthread_t tid;
 struct mythread{
     int thread_id;
-    char msg[20];    
+    char msg[30];    
 };
 
 static void *thread(void *thrdobj){
