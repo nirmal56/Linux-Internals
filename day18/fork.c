@@ -8,11 +8,12 @@ void myfun(int n){
         if(fork() == 0)
         {
             printf(" pid %d from parent pid %d\n",getpid(),getppid());
+            printf("%d process with id:%d",i,getpid());
             exit(0);
         }
     }
-    for(int i=0;i<n;i++) 
-    wait(NULL);
+    // for(int i=0;i<n;i++) 
+    // wait(NULL);
 }
 
 int main(){
