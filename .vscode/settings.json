@@ -7,6 +7,7 @@
         "unistd.h": "c",
         "cstdlib": "c",
         "ipc.h": "c",
-        "bitypes.h": "c"
+        "bitypes.h": "c",
+        "signal.h": "c"
     }
 }
