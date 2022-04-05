@@ -14,9 +14,9 @@ void toggle(char *buf, int cnt)
     for (int i = 0; i < cnt; i++)
     {
         if ((buf[i] >= 'A') && (buf[i] <= 'Z'))
-            buf[i] += 0x20;
+            buf[i] += 32;
         else if ((buf[i] >= 'a') && (buf[i] <= 'z'))
-            buf[i] -= 0x20;
+            buf[i] -= 32;
     }
 }
 
