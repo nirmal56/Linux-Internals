@@ -30,7 +30,7 @@ int main(){
         fprintf(stderr,"cann't reser sigprof!!");
         exit(EXIT_FAILURE);
     }
-    abort();
+    // abort();
      if(signal (SIGABRT,SIG_IGN)  ==  SIG_ERR){
         fprintf(stderr,"cann't ignore sighup!");
         exit(EXIT_FAILURE);
