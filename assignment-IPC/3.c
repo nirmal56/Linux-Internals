@@ -11,6 +11,7 @@ char buf1[40] = "tHiS iS tHe DaTa To Be ToGlEd.\n";
 
 void toggle(char *buf, int cnt)
 {
+    //this function will toggle caps to small letters.
     for (int i = 0; i < cnt; i++)
     {
         if ((buf[i] >= 'A') && (buf[i] <= 'Z'))
@@ -21,6 +22,7 @@ void toggle(char *buf, int cnt)
 }
 
 void parent(){
+    //parent will write buffer to pipe
     close(fds[0]);
     write(fds[1],buf1,40);
     for(int i=0;i<strlen(buf1);i++)
@@ -29,6 +31,7 @@ void parent(){
 }
 
 void child(){
+    //child wil; read buffer from pipe
     char buf[100];
     int n,i;
     close(fds[1]);
