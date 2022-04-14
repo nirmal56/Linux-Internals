@@ -1,45 +1,45 @@
-/*
-1.Write a udp client server program,client writing messages to server program and server
-return back the same toggled msg to client
-*/
-
-#include <unistd.h>
-#include <stdio.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <stdlib.h>
+#include<unistd.h>
+#include<stdio.h>
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<netinet/in.h>
+#include<stdlib.h>
+#include<string.h>
 
 #define PORT 8000
-#define MAXSZ 100
-
-int main(){
-    char msg1[MAXSZ];
-    char msg2[MAXSZ];
-    int sockfd, ret_val;
-    int n;
-    
-    socklen_t addr_len;
-    struct sockaddr_in servaddr;
-    sockfd = socket(AF_INET, SOCK_DGRAM, 0);
-
-    sockfd = socket(AF_INET, SOCK_STREAM, 0);
-    memset(&servaddr, 0, sizeof(servaddr));
-    servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(INADDR_ANY); 
-    servaddr.sin_port = htons(PORT); 
-    connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
-    while (1){
-        printf("Enter msg to be sent to srever\n");
-        fgets(msg1, MAXSZ, stdin);
-        if (msg1[0] == '#')
-        break;
-        n = strlen(msg1) + 1;
-        send(sockfd, msg1, n, 0);
-
-        n = recv(sockfd, msg2, MAXSZ, 0);
-        printf("recived msg form server:%s\n", msg2);
-        // close(sockfd);
+#define MAXLINE 1024
+int main()
+{
+    int sockfd;
+    char buffer[MAXLINE];
+    char *buf ;
+    struct sockaddr_in     servaddr;
+   
+    // Creating socket file descriptor
+    if ( (sockfd = socket(AF_INET, SOCK_DGRAM, 0)) < 0 ) {
+        perror("socket creation failed");
+        exit(EXIT_FAILURE);
     }
+   
+    memset(&servaddr, 0, sizeof(servaddr));
+       
+    // Filling server information
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_port = htons(PORT);
+    servaddr.sin_addr.s_addr = INADDR_ANY;
+       
+    while(1){
+        int n, len;
+        printf("enter msg:");
+        gets(buffer);
+        //client will send data to server
+        sendto(sockfd, (const char *)buffer, strlen(buffer), MSG_CONFIRM, (const struct sockaddr *) &servaddr, sizeof(servaddr));
+            
+        //now client will listen
+        n = recvfrom(sockfd, (char *)buffer, MAXLINE, MSG_WAITALL, (struct sockaddr *) &servaddr, &len);
+        buffer[n] = '\0';
+        printf("Server sent toggled value: %s\n", buffer);
+    }
+    // close(sockfd);
     return 0;
 }
