@@ -42,6 +42,7 @@ int main() {
             exit(2);
         }
         listen(listfd,5);
+        
         while(1){
             char buf[200];
             pid_t p;

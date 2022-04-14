@@ -18,6 +18,7 @@ int main(){
     char msg2[MAXSZ];
     int sockfd, ret_val;
     int n;
+    
     socklen_t addr_len;
     struct sockaddr_in servaddr;
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);

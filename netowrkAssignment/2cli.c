@@ -39,6 +39,5 @@ int main(){
     n=read(sockfd,buf,200);
     buf[n]='\0';
     printf("recieved %s from the server\n",buf);
-
     close(sockfd);
 }
